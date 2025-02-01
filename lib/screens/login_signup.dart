@@ -1,6 +1,9 @@
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:3091643019.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:3737738561.
 
 import 'package:flutter/material.dart';
 import 'package:myapp/screens/signup_screen.dart';
+import 'package:myapp/screens/chat_screen.dart';
 
 import 'forgot_password_screen_dart';
 
@@ -87,6 +90,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) =>  ChatScreen()),
+                        (Route<dynamic> route) => false);
                        // do something here with email and password
                     }
                   },

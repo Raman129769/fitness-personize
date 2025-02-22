@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
 
+import 'screens/demo_ai_screen.dart';
 import 'screens/signup_screen.dart';
 
+const apiKey = '--';
+
 void main() {
+  Gemini.init(apiKey: apiKey);
+
   runApp(const MyApp());
 }
 
@@ -15,25 +21,25 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-  useMaterial3: true,
-  colorScheme: const ColorScheme(
-    brightness: Brightness.light,
-    primary: Color(0xFF29ABE2),
-    onPrimary: Colors.white,
-    secondary: Color(0xFF003366),
-    onSecondary: Colors.white,
-    error: Colors.red,
-    onError: Colors.white,
-    surface: Color(0xFFFAFAFA),
-    onSurface: Color(0xFF666666),
-    tertiary: Color(0xFFFFCC00),
-    onTertiary: Colors.black,
-  ),
-  textTheme: const TextTheme(
-    bodyMedium: TextStyle(color: Color(0xFF003366)),
-  ),
-),
-      home: const SignupScreen(),
+        useMaterial3: true,
+        colorScheme: const ColorScheme(
+          brightness: Brightness.light,
+          primary: Color(0xFF29ABE2),
+          onPrimary: Colors.white,
+          secondary: Color(0xFF003366),
+          onSecondary: Colors.white,
+          error: Colors.red,
+          onError: Colors.white,
+          surface: Color(0xFFFAFAFA),
+          onSurface: Color(0xFF666666),
+          tertiary: Color(0xFFFFCC00),
+          onTertiary: Colors.black,
+        ),
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(color: Color(0xFF003366)),
+        ),
+      ),
+      home: const DemoAIScreen(),
     );
   }
 }
